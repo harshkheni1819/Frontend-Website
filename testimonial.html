@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H MART</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+
+        } 
+        .navbar{ 
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #555;
+        }
+        p{
+            color: #555;
+        }
+        .container{
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .col-2{
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+        .col-2 img{
+            max-width: 100%;
+            padding: 50px 0;
+        }
+        .col-2 h1{
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+        .btn{
+            display: inline-block;
+            background: red;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+        .btn:hover{
+            background: #995151;
+        }
+        .header{
+            background: radial-gradient(#fff);
+        } 
+        .header .row{
+            margin-top: 70px;
+        }
+        .col-3{
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        .col-3 img{
+            width: 100%;
+            
+            
+        }
+        .rating .fa{
+            color: #ff523b;
+        }
+        
+        /*------------testimonial-----------*/
+        .testimonial{
+            padding-top: 100px;
+        }
+        .testimonial .col-3{
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px 0px rgba(0,0 ,0.1);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .testimonial .col-3 img{
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+        .testimonial .col-3:hover{
+            transform: translatey(-10px);
+        }
+        .fa.fa-quote-left{
+            font-size: 34px;
+            color: #ff523b;
+        }
+        .col-3 p{
+            font-size: 12px;
+            margin: 12px 0;
+            color: #777;
+        }
+        .testimonial .col-3  h3{
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+        }
+        /*------------brands-----------*/
+        .footer{
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20;
+        }
+        .footer p{
+            color: #8a8a8a;
+        }
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-col-1{
+            flex-basis: 30%;
+        }
+        .footer-col-2{
+            flex: 1;
+            text-align: center;
+        }
+        .footer-col-2 img{
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-col-3, .footer-col-4{
+            flex-basis: 12%;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+        }
+        .app-logo{
+            margin-top: 20px;
+        }
+        .app-logo img{
+            width: 140px;
+        }
+        .footer hr{
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+        .copyright{
+            text-align: center;
+        }
+        .menu-icon{
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+        /*------------media query for menu--------------*/
+        @media only screen and (max-width: 800px){
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+            nav ul li{
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            nav ul li a{
+                color: #fff;
+
+            }
+            .menu-icon{
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /*----media query for less than 600 screen size----*/
+        @media only screen and (max-width: 600px){
+            .row{
+                text-align: center;
+            }
+            .col-2, .col-3, .col-4{
+                flex-basis: 100%;
+
+            }
+        }
+        /*-----dropdown----*/
+        .dropbtn {
+            background-color: red;
+            color: white;
+            border-radius: 30px;
+            padding: 8px 30px;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        .dropbtn:hover{
+            background: #995151;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #ff523b;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="main.html"><img src="logo.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="main.html">Home</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href="contactus.html">Contact us</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+            
+        </div>
+    </div>
+    <!-----------testimonial------------->
+    <div id="second" class="testimonial">
+        <div class="small">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Absolutely in love with my recent purchase from HMart! The quality is top-notch and the shipping was super fast. Will definitely shop here again!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="user-1.png">
+                    <h3>sean parker</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>I'm a regular shopper at HMart and they never disappoint. The range of products is diverse and the prices are reasonable. My go-to destination for fashion.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="user-2.png">
+                    <h3>Mike Smith</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Great customer service! I had an issue with my order and the support team at HMart was quick to respond and resolve it. Impressed with their professionalism.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="user-3.png">
+                    <h3>Mabel Joo</h3>
+                </div>
+            </div>
+        </div>
+        <!---2-->
+        <div class="small">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Absolutely in love with my recent purchase from HMart! The quality is top-notch and the shipping was super fast. Will definitely shop here again!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <img src="user-1.png">
+                    <h3>sean parker</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>I'm a regular shopper at HMart and they never disappoint. The range of products is diverse and the prices are reasonable. My go-to destination for fashion.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="user-2.png">
+                    <h3>Mike Smith</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>Great customer service! I had an issue with my order and the support team at HMart was quick to respond and resolve it. Impressed with their professionalism.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="user-3.png">
+                    <h3>Mabel Joo</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------footer------------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for android and ios mobile phone</p>
+                    <div class="app-logo">
+                        <img src="play-store.png">
+                        <img src="app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="logo.png" width="300px">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to the many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Jion Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023 - HMart</p>
+        </div>
+    </div>
+    </body>
+</html>

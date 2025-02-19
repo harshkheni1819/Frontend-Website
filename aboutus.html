@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - H MART </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+
+        } 
+        .navbar{ 
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #555;
+        }
+        p{
+            color: black;
+            font-size: 14px;
+            padding-left: 20px;
+            
+        }
+        .container{
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .col-2{
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+        .col-2 img{
+            max-width: 100%;
+            padding: 50px 0;
+        }
+        .col-2 h1{
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+        .btn{
+            display: inline-block;
+            background: red;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        }
+        .btn:hover{
+            background: #995151;
+        }
+        .header{
+            background: radial-gradient(#fff,#ffd6d6);
+        } 
+        .header .row{
+            margin-top: 70px;
+        }
+        .categories{
+            margin: 70px 0;
+        }
+        .col-3{
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        .col-3 img{
+            width: 100%;
+            
+            
+        }
+        .small-container{
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+            
+        }
+        .col-4{
+            flex-basis: 25%;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.5s;
+            
+        }
+        .col-4 img{
+            width: 70%;
+            margin-left: auto;
+        }
+        .title{
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: #555;
+        }
+        .title::after{
+            content: '';
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+        h4{
+            color: #555;
+            font-weight: normal;
+        }
+        .col-4 p{
+            font-size: 15px;
+        }
+        .rating .fa{
+            color: #ff523b;
+        }
+        .col-4:hover{
+            transform: translateY(-5px);
+        }
+        /*------------testimonial-----------*/
+        .testimonial{
+            padding-top: 100px;
+        }
+        .testimonial .col-3{
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px 0px rgba(0,0 ,0.1);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .testimonial .col-3 img{
+            width: 80px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+        .testimonial .col-3:hover{
+            transform: translateY(-10px);
+        }
+        .fa.fa-quote-left{
+            font-size: 34px;
+            color: #ff523b;
+        }
+        .col-3 p{
+            font-size: 12px;
+            margin: 12px 0;
+            color: #777;
+        }
+        .testimonial .col-3  h3{
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+        }
+        /*------------brands-----------*/
+        .footer{
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20;
+        }
+        .footer p{
+            color: #8a8a8a;
+        }
+        .footer h3{
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-col-1{
+            flex-basis: 30%;
+        }
+        .footer-col-2{
+            flex: 1;
+            text-align: center;
+        }
+        .footer-col-2 img{
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .footer-col-3, .footer-col-4{
+            flex-basis: 12%;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+        }
+        .app-logo{
+            margin-top: 20px;
+        }
+        .app-logo img{
+            width: 140px;
+        }
+        .footer hr{
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+        .copyright{
+            text-align: center;
+        }
+        .menu-icon{
+            width: 28px;
+            margin-left: 20px;
+            display: none;
+        }
+
+        /*------------media query for menu--------------*/
+        @media only screen and (max-width: 800px){
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: #333;
+                width: 100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+            nav ul li{
+                display: block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            nav ul li a{
+                color: #fff;
+
+            }
+            .menu-icon{
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /*----media query for less than 600 screen size----*/
+        @media only screen and (max-width: 600px){
+            .row{
+                text-align: center;
+            }
+            .col-2, .col-3, .col-4{
+                flex-basis: 100%;
+
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="main.html"><img src="logo.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="contactus.html">Contact us</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        
+    </div>
+
+    <p><b>HMart.IN </b>IS A ONE STOP SHOP FOR ALL YOUR FASHION NEEDS AND LIFESTYLE. WHICH IS SERVING SINCE 2023.</p>
+
+    <p><b>HMart.IN </b>Aims At Providing A hassle Free And Enjoyable Shopping Experience To shoppers across the country As Well As Foreign Countries With the Widest Range of Brands And Product.(Yes We Do Ship International) fashionfreakindia Value Proposition Revolves Around Giving Consumer The Power And Ease Of Purchasing Fashion And Lifestyle Products Online.Cash On Delivery And 10 days Replacement Policy Makes More Easy For The Customer To Trust. Our Aim Is To Satisfy Every Customer With Premium Quality Durable Goods and Make Them Happy With Our Products And Service.</p>
+    <br>
+    <p>• Quick Shipment : We Strive To Deliver Within 3-7 Business Days, Depending On Your Selected Pincode. Delivery Time May Exceed 2-3 Days For Remote Locations. Use Online Payment Option For Quick Delivery.</p>
+    <p>• COD Disclaimer : We Offer COD To Customer Since We Started In 2023. It's An Humble Request To You. Please! Please! Please! Place COD Orders Only When You Are 100% Sure Of Accepting Deliveries.</p>
+    <p>• Customer Support : Your Questions Are Our Priority. Feel Free To WhatsApp Us On 9824-177-869. Sales Executive Will Answer In Less Than 5 Business Hours Excluding Weekends.</p>
+    <p>• 100% Customer Satisfaction Guarantee : We Take Pride In Giving You The Best Products With The Best Services. Our Goal Is Also To Amaze You With Superior Quality Products & Services.</p>
+    <p>• You Receive What You Ordered : Yes, This Sounds Crazy, But Our Customers Have Told Us That Some Online Stores Do Not Send What They Exactly Order! We Ship Exact Item That You Ordered, No Exceptions.</p>
+    <p>• Multiple Orders : INR 200 Advance On Each Product For Order Confirmation, Incase Customer Orders 2 Or More Products. Note: Accessories/Freebies With Product Is Not Assured But Subject Of Availability.</p>
+    <p>• Secret Tip : Suuuush, Sabko Mat Batana. Additionals Discounts + Faster Deliveries On Prepaid Orders. </p>
+    <p>• Learning : We Exist For Our Customers. With Every Click You Make & The Product You Purchase, We Learn A Little More About You So That We Can Tailor Our Services To Suit Your Ever Changing Tastes.</p>
+        
+    <p>• ANY Feedbacks OR Suggetions OR Queries? FEEL FREE TO CONTACT US! WhatsApp Us 9824-177-869</p>
+        
+    <!-----------testimonial------------->
+    <div class="testimonial">
+        <div class="small">
+            <div class="row">
+                <div class="col-3">
+
+                    <h1>Founder&Developer</h1>
+                    <img src="ceo11.jpg">
+                    <h3>Harsh Kheni</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eveniet. Dolorum laudantium nulla itaque voluptates molestiae veniam at doloribus! Aut eligendi culpa iste consequatur autem? Vel recusandae vero officia natus dolore, quas vitae blanditiis ut quaerat accusamus ipsa magni perferendis voluptatibus. Reprehenderit, deserunt? Quo doloribus harum non cumque necessitatibus voluptatem.</p>
+                    
+                    
+                </div>
+                <div class="col-3">
+                    <h1>CO-Founder</h1>
+                    <img src="ceo.jpg">
+                    <h3>Karen S. Lynch</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eveniet. Dolorum laudantium nulla itaque voluptates molestiae veniam at doloribus! Aut eligendi culpa iste consequatur autem? Vel recusandae vero officia natus dolore, quas vitae blanditiis ut quaerat accusamus ipsa magni perferendis voluptatibus. Reprehenderit, deserunt? Quo doloribus harum non cumque necessitatibus voluptatem.</p>
+                    
+                    
+                </div>
+                <div class="col-3">
+                    <h1>C.E.O</h1>
+                    <img src="ceo2.png">
+                    <h3>Jeff weiner</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eveniet. Dolorum laudantium nulla itaque voluptates molestiae veniam at doloribus! Aut eligendi culpa iste consequatur autem? Vel recusandae vero officia natus dolore, quas vitae blanditiis ut quaerat accusamus ipsa magni perferendis voluptatibus. Reprehenderit, deserunt? Quo doloribus harum non cumque necessitatibus voluptatem.</p>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--------------footer------------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for android and ios mobile phone</p>
+                    <div class="app-logo">
+                        <img src="play-store.png">
+                        <img src="app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="logo.png" width="300px">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to the many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Jion Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023 - HMart</p>
+        </div>
+    </div>
+
+    <!---------------js for toggle menu--------------->
+    <script>
+        var MenuItems =document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+            {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else
+            {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
